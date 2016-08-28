@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <input type="range" id="range" min="0" max="180">
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var range = document.getElementById("range");
+    range.addEventListener("input", function(e) {
+	var rangeValue = e.target.value;
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', '/'+ rangeValue);
+	xhr.send(null);
+	console.log("Requested range: " + rangeValue);
+    });
+});
+</script>
+</body>
+</html>
